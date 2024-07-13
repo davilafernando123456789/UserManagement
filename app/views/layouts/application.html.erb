@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_importmap_tags %>
+  <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/office-and-internet/66/11-1024.png" type="image/x-icon"> 
+</head>
+<body>
+
+  <div class="container">
+  <div class="header">
+    User Management System
+  </div>
+    <% flash.each do |type, message| %>
+      <div class="flash <%= type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+function confirmDelete(event, userPath) {
+  event.preventDefault(); // Detener la acción por defecto
+
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#dc3545',
+    cancelButtonColor: '#6c757d',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Enviar la solicitud de eliminación
+      fetch(userPath, {
+        method: 'DELETE',
+        headers: {
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content, 
+          'Accept': 'text/vnd.turbo-stream.html, text/html, application/xhtml+xml'
+        },
+        credentials: 'same-origin' 
+      }).then(response => {
+        window.location.href = '/users'; 
+      }).catch(error => {
+        console.error('Error:', error);
+      });
+
+    }
+  });
+  return false; 
+}
+
+</script>
+
+</body>
+</html>

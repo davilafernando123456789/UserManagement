@@ -1,0 +1,330 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 70%; /* Ajuste el ancho máximo para que el contenedor no sea demasiado estrecho */
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Hacer el contenedor desplazable horizontalmente */
+  }
+  
+  /* Flash Messages */
+  .flash {
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .flash.notice {
+    background-color: #28a745; /* Success green */
+  }
+  
+  .flash.alert {
+    background-color: #dc3545; /* Error red */
+  }
+  
+  /* Form Styling */
+  form {
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    width: 100%;
+  }
+  
+  button {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darken(#007aff, 10%);
+  }
+  
+  /* Error Messages */
+  .error_messages p {
+    color: #dc3545;
+    font-size: 14px;
+  }
+  
+  /* Botones y enlaces */
+  .btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary {
+    background-color: #007aff;
+  }
+  
+  .btn-info {
+    background-color: #5bc0de;
+  }
+  
+  .btn-warning {
+    background-color: #f0ad4e;
+  }
+  
+  .btn-danger {
+    background-color: #d9534f;
+  }
+  
+  .btn:hover {
+    opacity: 0.85;
+  }
+  
+  /* Tabla */
+  .table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    overflow-x: auto; /* Hacer la tabla desplazable horizontalmente */
+  }
+  
+  .table th, .table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .table thead {
+    background-color: #f7f7f7;
+  }
+  
+  /* Mejorar la visibilidad de las celdas de acción */
+  .table td {
+    vertical-align: middle;
+  }
+  
+  /* Formulario */
+  .user-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #007aff;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+  }
+  
+  .btn-primary:hover {
+    background-color: darken(#007aff, 10%);
+  }
+  
+  .btn-secondary:hover {
+    background-color: darken(#6c757d, 10%);
+  }
+  
+  .error_messages p {
+    color: #d9534f; /* Bootstrap danger color for errors */
+    font-size: 14px;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545; /* Un rojo más intenso para acciones peligrosas */
+  }
+  
+  .destroy-btn {
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .destroy-btn:hover {
+    background-color: #c82333; /* Un rojo más oscuro al pasar el ratón por encima para un feedback visual inmediato */
+    transform: scale(1.05); /* Sutil aumento de tamaño para dar importancia */
+  }
+  /* Estilos para la página de detalles del usuario */
+.user-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .user-details h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .user-details p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .user-details strong {
+    display: inline-block;
+    width: 120px;
+    color: #555;
+  }
+  
+  .user-details .user-detail {
+    color: #333;
+  }
+  
+  .actions {
+    margin-top: 20px;
+    text-align: center; /* Centrar los botones */
+  }
+  
+  .actions .btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .actions .btn-primary {
+    background-color: #007aff;
+  }
+  
+  .actions .btn-secondary {
+    background-color: #6c757d;
+  }
+  
+  .actions .btn:hover {
+    opacity: 0.85;
+  }
+  
+  .actions .btn-primary:hover {
+    background-color: darken(#007aff, 10%);
+  }
+  
+  .actions .btn-secondary:hover {
+    background-color: darken(#6c757d, 10%);
+  }
+  
+  .header {
+    background-color: #007aff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-bottom: 5px;
+  }
+  /* Responsividad para Tablets y Dispositivos Móviles */
+  @media (max-width: 768px) {
+    .container, .user-form {
+      padding: 10px;
+      margin: 10px;
+    }
+    
+    .form-group, .form-control, input, button {
+      padding: 8px;
+      font-size: 14px; /* Ajustar el tamaño de fuente para mejor legibilidad en dispositivos pequeños */
+    }
+    
+    .btn {
+      padding: 8px 12px; /* Reducir el padding de los botones para ahorrar espacio */
+      font-size: 14px;
+    }
+    
+    /* Ajustes específicos para la tabla para mejorar la visualización en dispositivos móviles */
+    .table {
+      font-size: 14px; /* Reducir el tamaño de la fuente para la tabla */
+      display: block;
+      overflow-x: auto; /* Hacer la tabla desplazable horizontalmente en pantallas pequeñas */
+      white-space: nowrap; /* Evitar que los contenidos de la tabla se envuelvan */
+    }
+    
+    .table th, .table td {
+      padding: 8px; /* Reducir el padding en celdas para ahorrar espacio */
+    }
+  }
+  
