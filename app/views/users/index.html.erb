@@ -20,7 +20,7 @@
         <td><%= link_to 'Show', user, class: "btn btn-info" %></td>
         <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-warning" %></td>
         <td>
-  <%= link_to 'Destroy', user, method: :delete, class: "btn btn-danger destroy-btn", data: { turbo_method: :delete }, onclick: "confirmDelete(event, '#{user_path(user)}');" %>
+<%= link_to 'Destroy', user, method: :delete, class: "btn btn-danger destroy-btn", data: { turbo_method: :delete }, onclick: "confirmDelete(event, '#{user_path(user)}');" %>
 </td>
 
       </tr>
